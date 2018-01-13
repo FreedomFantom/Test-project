@@ -64,7 +64,7 @@
 		
 	xhrPost = new XMLHttpRequest; 
 
-	xhrPost.open ('POST', 'https://www.eliftech.com/school-task', false); //Configure POST request
+	xhrPost.open ('POST', 'https://u0byf5fk31.execute-api.eu-west-1.amazonaws.com/etschool/task', false); //Configure POST request
 		
 	xhrPost.send(postfixArray); // send POST request
 	console.log (postfixArray);
