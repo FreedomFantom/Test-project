@@ -12,7 +12,7 @@
   var stack = [];
   var ch; // current char
   string = string.split(" "); // remove spaces
-  for (var i = 0, length = string.length; i < length;  i++) {
+  for (let i = 0, length = string.length; i < length;  i++) {
 
     ch = string[i];
 
@@ -27,7 +27,7 @@
     }
 	
 	else { // if operand
-      stack.push(ch);
+      stack.push(parseInt(ch));
 	}
 
 
@@ -49,7 +49,7 @@
 	postfixArray = JSON.parse(postfixArray); // make a javascript object out of JSON object
 	
 	// calculate postfix data
-	for (var k = 0, length = postfixArray.expressions.length; k < length; k++) {
+	for (let k = 0, length = postfixArray.expressions.length; k < length; k++) {
 		console.log (postfixArray.expressions[k]);
 		postfixArray.expressions[k] = parseInt(postfixEval(postfixArray.expressions[k]));//replace postfix equation to it's solution in integer	
 		console.log (postfixArray.expressions[k]);
@@ -65,10 +65,9 @@
 	xhrPost = new XMLHttpRequest; 
 
 	xhrPost.open ('POST', 'https://u0byf5fk31.execute-api.eu-west-1.amazonaws.com/etschool/task', false); //Configure POST request
-		
-	xhrPost.send(postfixArray); // send POST request
-	console.log (postfixArray);
-	//thanks for the fish
 	
+	xhrPost.send(postfixArray); // send POST request
+	
+	//thanks for the fish
 	
 
